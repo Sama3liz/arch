@@ -8,14 +8,14 @@ pacman -Sy
 ln -sf /usr/share/zoneinfo/America/Guayaquil /etc/localtime
 hwclock --systohc
 
-# Step 2: Set hostname, language and host
+# Step 2: Set hostname, language and hosts
 vim /etc/locale.gen
 locale-gen
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf
-echo "amonra" >> /etc/hostname
+echo "HADES" >> /etc/hostname
 echo "# The following lines are desirable for IPv4 capable hosts" >> /etc/hosts
 echo "127.0.0.1 localhost" >> /etc/hosts
-echo "127.0.1.1 amonra.local amonra" >> /etc/hosts
+echo "127.0.1.1 hades.local hades" >> /etc/hosts
 echo "# The following lines are desirable for IPv6 capable hosts" >> /etc/hosts
 echo "::1  localhost" >> /etc/hosts
 
