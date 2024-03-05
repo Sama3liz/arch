@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Initial configuration
+nano /etc/pacman.conf
+pacman -Sy
+
 # Step 1: Set time zone
 ln -sf /usr/share/zoneinfo/America/Guayaquil /etc/localtime
 hwclock --systohc
