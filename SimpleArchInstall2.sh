@@ -4,11 +4,16 @@
 ln -sf /usr/share/zoneinfo/America/Guayaquil /etc/localtime
 hwclock --systohc
 
-# Step 2: Set hostname and language
+# Step 2: Set hostname, language and host
 vim /etc/locale.gen
 locale-gen
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf
-echo "AMONRA" >> /etc/hostname
+echo "amonra" >> /etc/hostname
+echo "# The following lines are desirable for IPv4 capable hosts" >> /etc/hosts
+echo "127.0.0.1 localhost" >> /etc/hosts
+echo "127.0.1.1 amonra.local amonra" >> /etc/hosts
+echo "# The following lines are desirable for IPv6 capable hosts" >> /etc/hosts
+echo "::1  localhost" >> /etc/hosts
 
 # Step 3: Configure bootloader
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=ARCH --recheck --modules="tpm" --disable-shim-lock
