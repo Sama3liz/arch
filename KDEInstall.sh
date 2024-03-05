@@ -7,12 +7,23 @@
 # Install display drivers
 pacman -S xorg xf86-video-amdgpu
 
+# Lib for steam
+pacman -S lib32-mesa
+
 # Install sound drivers
-pacman -S pulseaudio pulseaudio-bluetooth
+#pacman -S pulseaudio pulseaudio-bluetooth
+pacman -S pipewire wireplumber
 
 # Install kde
-pacman -S plasma-desktop dolphin dolphin-plugins ark konsole evince gwenview plasma-nm plasma-pa kdeplasma-addons kde-gtk-config powerdevil sddm sddm-kcm bluedevil kscreen kinfocenter kcalc ffmpegthumbs firefox libreoffice-fresh gedit rhythmbox
+pacman -S plasma-desktop sddm sddm-kcm
+pacman -S plasma-nm plasma-pa powerdevil bluedevil plasma-browser-integration plasma-systemmonitor 
+pacman -S breeze-gtk kdeplasma-addons kde-gtk-config kscreen kinfocenter packagekit-qt5 khotkeys
 
+# Install applications
+pacman -S konsole dolphin dolphin-plugins ark kwrite kcalc krunner partitionmanager spectacle
+pacman -S firefox grub-customizer ffmpegthumbs gwenview kdegraphics-thumbnailers kdesdk-thumbnailers okular kamoso
 
 # Enable display manager service
 systemctl enable sddm
+systemctl enable pipewire
+systemctl enable wireplumber
