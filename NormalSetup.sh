@@ -49,6 +49,7 @@ pacman -S pulseaudio pulseaudio-bluetooth --needed
 pacman -S plasma-desktop sddm sddm-kcm --needed
 pacman -S plasma-nm plasma-pa powerdevil bluedevil plasma-browser-integration plasma-systemmonitor --needed
 pacman -S breeze-gtk kdeplasma-addons kde-gtk-config kscreen kinfocenter packagekit-qt5 khotkeys --needed
+pacman -S plasma --needed
 
 # Install applications
 pacman -S konsole dolphin dolphin-plugins ark kwrite kcalc partitionmanager spectacle --needed
