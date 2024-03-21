@@ -52,8 +52,9 @@ pacman -S pulseaudio pulseaudio-bluetooth --needed
 pacman -S plasma --needed
 
 # Install applications
-pacman -S konsole dolphin dolphin-plugins ark kwrite kcalc partitionmanager spectacle --needed
-pacman -S firefox grub-customizer ffmpegthumbs gwenview kdegraphics-thumbnailers kdesdk-thumbnailers okular kamoso --needed
+#pacman -S konsole dolphin dolphin-plugins ark kwrite kcalc partitionmanager spectacle --needed
+#pacman -S firefox grub-customizer ffmpegthumbs gwenview kdegraphics-thumbnailers kdesdk-thumbnailers okular kamoso --needed
+pacamn -S kde-applications
 
 # Enable display manager service
 systemctl enable sddm
