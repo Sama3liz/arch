@@ -32,9 +32,6 @@ useradd -m -G wheel,storage,power,audio samael
 passwd samael
 visudo
 
-# Step 14: Enable services
-systemctl enable NetworkManager bluetooth.service
-
 # Install display drivers
 pacman -S xorg xf86-video-amdgpu --needed
 
@@ -61,3 +58,5 @@ systemctl enable sddm
 #systemctl --user enable pipewire
 #systemctl --user enable wireplumber
 
+# Step 14: Enable services
+systemctl enable NetworkManager bluetooth.service
