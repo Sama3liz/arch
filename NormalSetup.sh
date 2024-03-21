@@ -46,9 +46,9 @@ pacman -S pulseaudio pulseaudio-bluetooth --needed
 #pacman -S pipewire wireplumber --needed
 
 # Install kde
-pacman -S plasma-desktop sddm sddm-kcm --needed
-pacman -S plasma-nm plasma-pa powerdevil bluedevil plasma-browser-integration plasma-systemmonitor --needed
-pacman -S breeze-gtk kdeplasma-addons kde-gtk-config kscreen kinfocenter packagekit-qt5 khotkeys --needed
+#pacman -S plasma-desktop sddm sddm-kcm --needed
+#pacman -S plasma-nm plasma-pa powerdevil bluedevil plasma-browser-integration plasma-systemmonitor --needed
+#pacman -S breeze-gtk kdeplasma-addons kde-gtk-config kscreen kinfocenter packagekit-qt5 khotkeys --needed
 pacman -S plasma --needed
 
 # Install applications
