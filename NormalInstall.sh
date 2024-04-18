@@ -12,7 +12,7 @@ echo "Enter BOOT partition: "
 read BOOT
 
 # Step 1: Format
-mkfs.fat -F 32 "${BOOT}"
+mkfs.vfat -F 32 "${BOOT}"
 mkfs.ext4 "${ROOT}"
 
 # Step 4: Mounting
