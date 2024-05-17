@@ -25,10 +25,12 @@ nano /etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # Step 12: Set root password
+echo "Set root password"
 passwd
 
 # Step 13: Set a new user
-useradd -m -G wheel,storage,power,audio samael
+useradd -m -G wheel,storage,power,audio,video,optical samael
+echo "Set user password"
 passwd samael
 visudo
 
@@ -43,15 +45,13 @@ pacman -S pulseaudio pulseaudio-bluetooth --needed
 #pacman -S pipewire wireplumber --needed
 
 # Install kde
-#pacman -S plasma-desktop sddm sddm-kcm --needed
-#pacman -S plasma-nm plasma-pa powerdevil bluedevil plasma-browser-integration plasma-systemmonitor --needed
-#pacman -S breeze-gtk kdeplasma-addons kde-gtk-config kscreen kinfocenter packagekit-qt5 --needed
 pacman -S plasma sddm --needed
 
 # Install applications
-#pacman -S konsole dolphin dolphin-plugins ark kwrite kcalc partitionmanager spectacle --needed
-#pacman -S firefox grub-customizer ffmpegthumbs gwenview kdegraphics-thumbnailers kdesdk-thumbnailers okular kamoso --needed
-pacman -S kde-applications --needed
+pacman -S ark dolphin dolphin-plugins ffmpegthumbs gwenview kalarm kcalc kdeconnect kdegraphics-thumbnailers --needed
+pacman -S kdialog khelpcenter kjournald koko kolourpaint konsole kwrite ksystemlog ktouch krunner kvantum partitionmanager spectacle --needed
+pacman -S firefox grub-customizer okular print-manager sweeper yakuake vlc xsettingsd --needed
+sudo pacman -S acpid cronie cups neofetch ntp pacman-contrib wget --needed
 
 # Enable display manager service
 systemctl enable sddm
@@ -60,3 +60,8 @@ systemctl enable sddm
 
 # Step 14: Enable services
 systemctl enable NetworkManager bluetooth.service
+systemctl enable acpid.service  
+systemctl enable cups.service
+systemctl enable ntpd.service
+
+paccache -r
