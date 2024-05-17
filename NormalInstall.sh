@@ -20,7 +20,7 @@ mount "${ROOT}" /mnt
 mount --mkdir "${BOOT}" /mnt/boot
 
 # Step 5: Install
-pacstrap /mnt linux linux-firmware linux-headers linux-lts linux-lts-headers base base-devel grub efibootmgr vim git amd-ucode networkmanager neofetch wget curl dhcp dhcpcd iwd wireless_tools bluez bluez-utils lsb-release ntfs-3g dosfstools os-prober mtools nano
+pacstrap /mnt linux linux-firmware linux-headers linux-lts linux-lts-headers base base-devel sof-firmware grub efibootmgr vim git amd-ucode networkmanager neofetch wget curl dhcp dhcpcd iwd wireless_tools bluez bluez-utils lsb-release ntfs-3g dosfstools os-prober mtools nano
 
 # Step 6: Generate file system table
 genfstab -U /mnt >> /mnt/etc/fstab
