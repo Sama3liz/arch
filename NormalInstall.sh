@@ -10,13 +10,17 @@ echo "Enter ROOT partition: "
 read ROOT
 echo "Enter BOOT partition: "
 read BOOT
+echo "Enter SWAP partition: "
+read SWAP
 
 # Step 1: Format
 mkfs.vfat -F 32 "${BOOT}"
 mkfs.ext4 "${ROOT}"
+mkswap "${SWAP}"
 
 # Step 4: Mounting
 mount "${ROOT}" /mnt
+swapon "${SWAP}"
 mount --mkdir "${BOOT}" /mnt/boot
 
 # Step 5: Install
