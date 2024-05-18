@@ -1,3 +1,5 @@
+#!/bin/bash
+
 mkdir /home/samael/Extras
 cd /home/samael/Extras
 
